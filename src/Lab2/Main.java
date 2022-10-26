@@ -2,23 +2,35 @@ package Lab2;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Book discoTitanic = new Book( "Disco Titanic" );
-        Author rpGheo = new Author( "Radu Pavel Gheo" );
+	public static void main(String[] args) throws Exception {
 
-        discoTitanic.addAuthor(rpGheo);
-        int indexChapterOne = discoTitanic.createChapter( "Capitolul 1" );
-        Chapter chp1 = discoTitanic.getChapter(indexChapterOne);
-        int indexSubChapterOneOne = chp1.createSubChapter( "Subcapitolul 1.1" );
-        lab2.SubChapter scOneOne = chp1.getSubChapter(indexSubChapterOneOne);
+		long startTime = System.currentTimeMillis();
+		ImageProxy img1 = new ImageProxy( "Pamela Anderson" );
+		ImageProxy img2 = new ImageProxy( "Kim Kardashian" );
+		ImageProxy img3 = new ImageProxy( "Kirby Griffin" );
 
-        scOneOne.createNewParagraph("Paragraph 1");
-        scOneOne.createNewParagraph("Paragraph 2");
-        scOneOne.createNewParagraph("Paragraph 3");
-        scOneOne.createNewImage("Image 1");
-        scOneOne.createNewParagraph("Paragraph 4");
-        scOneOne.createNewTable("Table 1");
-        scOneOne.createNewParagraph("Paragraph 5");
-        scOneOne.print();
-    }
+		Section playboyS1 = new Section( "Front Cover" );
+		playboyS1.add(img1);
+
+		Section playboyS2 = new Section( "Summer Girls" );
+		playboyS2.add(img2);
+		playboyS2.add(img3);
+
+		Book playboy = new Book( "Playboy" );
+		playboy.addContent(playboyS1);
+		playboy.addContent(playboyS2);
+
+		long endTime = System.currentTimeMillis();
+		System.out.println( "Creation of the content took " + (endTime - startTime) + " milliseconds" );
+
+		startTime = System.currentTimeMillis();
+		playboyS1.print();
+		endTime = System.currentTimeMillis();
+		System.out.println( "Printing of the section 1 took " + (endTime - startTime) + " milliseconds" );
+
+		startTime = System.currentTimeMillis();
+		playboyS1.print();
+		endTime = System.currentTimeMillis();
+		System.out.println( "Printing again the section 1 took " + (endTime - startTime) + " milliseconds" );
+	}
 }
