@@ -1,4 +1,4 @@
-package Lab5;
+package services;
 
 public class ImageLoaderFactory {
     public ImageLoader create(String type) {

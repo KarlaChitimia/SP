@@ -1,4 +1,4 @@
-package Lab5;
+package models;
 
 public class ImageProxy implements Element, Picture {
     private String url;

@@ -1,4 +1,4 @@
-package Lab5;
+package models;
 
 public class TableOfContents implements Element {
         private String name;
@@ -7,7 +7,7 @@ public class TableOfContents implements Element {
             this.name = name;
         }
         public void print() {
-            System.out.println("TableOfContents with name: " + name);
+            System.out.println("models.TableOfContents with name: " + name);
         }
 
         @Override

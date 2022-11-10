@@ -1,4 +1,4 @@
-package Lab5;
+package models;
 
 import java.util.ArrayList;
 
@@ -11,10 +11,10 @@ public class Book extends Section{
         this.title = name;
     }
     public void print() {
-        System.out.println("Book: " + this.title + "\n");
+        System.out.println("models.Book: " + this.title + "\n");
         System.out.println("Authors:");
         for(Author a : authors) {
-            System.out.print("Author: ");
+            System.out.print("models.Author: ");
             a.print();
         }
         System.out.println();

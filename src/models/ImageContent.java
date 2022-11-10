@@ -1,4 +1,4 @@
-package Lab5;
+package models;
 
 public class ImageContent {
     private String type;

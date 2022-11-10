@@ -1,4 +1,4 @@
-package Lab5;
+package models;
 
 public class Table implements Element {
     private String title;
@@ -7,7 +7,7 @@ public class Table implements Element {
         this.title = title;
     }
     public void print() {
-        System.out.println("Table with title: " + title);
+        System.out.println("models.Table with title: " + title);
     }
     @Override
     public void add(Element e) {

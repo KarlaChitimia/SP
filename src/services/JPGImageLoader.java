@@ -1,4 +1,6 @@
-package Lab5;
+package services;
+
+import models.ImageContent;
 
 public class JPGImageLoader implements ImageLoader {
     @Override

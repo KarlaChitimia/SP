@@ -1,4 +1,6 @@
-package Lab5;
+package models;
+
+import services.AlignStrategy;
 
 public class Paragraph implements Element {
     private String text;

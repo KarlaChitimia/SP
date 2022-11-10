@@ -1,4 +1,7 @@
-package Lab5;
+package models;
+
+import services.ImageLoader;
+import services.ImageLoaderFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,10 +22,10 @@ public class Image implements Element, Picture {
     }
     public void print(){
         if (content != null) {
-            System.out.println("Image with name: " + imageName + "content: " + content);
+            System.out.println("models.Image with name: " + imageName + "content: " + content);
         }
         else {
-            System.out.println("Image with name: " + imageName);
+            System.out.println("models.Image with name: " + imageName);
         }
     }
     @Override

@@ -1,4 +1,8 @@
-package Lab5;
+import models.Paragraph;
+import models.Section;
+import services.AlignCenter;
+import services.AlignLeft;
+import services.AlignRight;
 
 public class Main {
 
