@@ -1,6 +1,7 @@
 package models;
 
 import services.AlignStrategy;
+import services.Visitor;
 
 public class Paragraph implements Element {
     private String text;
@@ -35,6 +36,11 @@ public class Paragraph implements Element {
         else {
             return ((Paragraph) e).text.equals(this.text);
         }
+    }
+
+    @Override
+    public void accept(Visitor y) {
+        y.visitParagraph(this);
     }
 
     public String getName() {

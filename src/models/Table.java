@@ -1,5 +1,7 @@
 package models;
 
+import services.Visitor;
+
 public class Table implements Element {
     private String title;
 
@@ -27,5 +29,10 @@ public class Table implements Element {
         else {
             return ((Table) e).title.equals(this.title);
         }
+    }
+
+    @Override
+    public void accept(Visitor y) {
+        y.visitTable(this);
     }
 }

@@ -2,6 +2,7 @@ package models;
 
 import services.ImageLoader;
 import services.ImageLoaderFactory;
+import services.Visitor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -47,6 +48,12 @@ public class Image implements Element, Picture {
             return ((Image) e).imageName.equals(this.imageName);
         }
     }
+
+    @Override
+    public void accept(Visitor y) {
+        y.visitImage(this);
+    }
+
     @Override
     public String url() {
         return imageName;

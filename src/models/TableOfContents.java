@@ -1,5 +1,7 @@
 package models;
 
+import services.Visitor;
+
 public class TableOfContents implements Element {
         private String name;
         public TableOfContents(String name) {
@@ -26,5 +28,10 @@ public class TableOfContents implements Element {
         public boolean find(Element e) {
             return false;
         }
+
+    @Override
+    public void accept(Visitor y) {
+        y.visitTableOfContents(this);
+    }
 }
 
