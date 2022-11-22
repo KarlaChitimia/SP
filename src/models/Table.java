@@ -32,7 +32,7 @@ public class Table implements Element {
     }
 
     @Override
-    public void accept(Visitor y) {
-        y.visitTable(this);
+    public void accept(Visitor v) {
+        v.visitTable(this);
     }
 }

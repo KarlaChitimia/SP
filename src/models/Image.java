@@ -23,10 +23,10 @@ public class Image implements Element, Picture {
     }
     public void print(){
         if (content != null) {
-            System.out.println("models.Image with name: " + imageName + "content: " + content);
+            System.out.println("Image with name: " + imageName + "content: " + content);
         }
         else {
-            System.out.println("models.Image with name: " + imageName);
+            System.out.println("Image with name: " + imageName);
         }
     }
     @Override
@@ -48,12 +48,6 @@ public class Image implements Element, Picture {
             return ((Image) e).imageName.equals(this.imageName);
         }
     }
-
-    @Override
-    public void accept(Visitor y) {
-        y.visitImage(this);
-    }
-
     @Override
     public String url() {
         return imageName;
@@ -69,5 +63,10 @@ public class Image implements Element, Picture {
     public void setContent(String type) {
         ImageLoader loader = factory.create(type);
         content = loader.load("dummy content");
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitImage(this);
     }
 }

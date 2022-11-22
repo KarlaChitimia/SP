@@ -9,5 +9,5 @@ public interface Element {
     public void remove(Element e);
     public boolean find(Element e);
 
-    public void accept(Visitor y);
+    public void accept(Visitor v);
 }

@@ -13,14 +13,15 @@ public class Section implements Element {
         this.name = name;
     }
     public void print(){
+        System.out.println("---");
         System.out.println(name);
         for (Element el : subElements) {
             el.print();
         }
+        System.out.println("---");
     }
     @Override
     public void add(Element e) throws Exception {
-        // TODO Auto-generated method stub
         try {
             for (Element elem : subElements) {
                 if (elem.find(e)) {
@@ -53,12 +54,15 @@ public class Section implements Element {
         return false;
     }
 
-    @Override
-    public void accept(Visitor y) {
-        y.visitSection(this);
+    public String getName() {
+        return name;
+    }
 
+    @Override
+    public void accept(Visitor v) {
+        v.visitSection(this);
         for (Element el : subElements) {
-            el.accept(y);
+            el.accept(v);
         }
     }
 }

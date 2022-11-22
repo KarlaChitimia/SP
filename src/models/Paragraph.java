@@ -38,15 +38,15 @@ public class Paragraph implements Element {
         }
     }
 
-    @Override
-    public void accept(Visitor y) {
-        y.visitParagraph(this);
-    }
-
     public String getName() {
         return this.text;
     }
     public void setAlignStrategy(AlignStrategy align) {
         this.alignStrategy = align;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitParagraph(this);
     }
 }

@@ -33,10 +33,6 @@ public class ImageProxy implements Element, Picture {
         return false;
     }
 
-    @Override
-    public void accept(Visitor y) {
-        y.visitImageProxy(this);
-    }
 
     @Override
     public String url() {
@@ -51,5 +47,10 @@ public class ImageProxy implements Element, Picture {
             realImage = new Image(url);
         }
         return realImage;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitImageProxy(this);
     }
 }
